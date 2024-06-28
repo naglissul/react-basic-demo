@@ -1,11 +1,9 @@
-interface MainPageProps {
-  num1: number;
-  num2: number;
-  children: React.ReactNode;
-}
+import { useParams } from "react-router-dom";
 
 //Form
-const MainPage: React.FC<MainPageProps> = (props) => {
+const MainPage: React.FC = () => {
+  const { num } = useParams();
+
   return (
     <div
       style={{
@@ -16,10 +14,7 @@ const MainPage: React.FC<MainPageProps> = (props) => {
         padding: "10px",
       }}
     >
-      <h1>This is form</h1>
-      <p>A lot of info....</p>
-      {props.children}
-      <button>Submit</button>
+      PASSED NUM: {num}
     </div>
   );
 };
